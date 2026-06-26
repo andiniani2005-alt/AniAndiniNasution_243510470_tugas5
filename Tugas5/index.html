@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaStore | Premium E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Nexa<span>Store</span></a>
+            <div class="cart-icon" id="cart-btn">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="tagline">Exclusive Collection 2026</span>
+            <h1>Gaya Masa Kini,<br>Kualitas Premium.</h1>
+            <p>Dapatkan koleksi gadget dan produk fashion terbaik dengan penawaran harga eksklusif.</p>
+            <a href="#products" class="btn-shop">Jelajahi Produk</a>
+        </div>
+    </header>
+
+    <main class="container" id="products">
+        <h2 class="section-title">Produk Terlaris</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphone Wireless">
+                </div>
+                <div class="product-info">
+                    <span class="category">Elektronik</span>
+                    <h3>NexaSound Wireless Headphone</h3>
+                    <div class="price-box"><span class="price" data-price="1499000">Rp 1.499.000</span></div>
+                    <button class="btn-add-cart" data-name="NexaSound Headphone" data-price="1499000">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Jam Tangan Minimalis">
+                </div>
+                <div class="product-info">
+                    <span class="category">Aksesoris</span>
+                    <h3>Chronos Minimalist Watch</h3>
+                    <div class="price-box"><span class="price" data-price="2199000">Rp 2.199.000</span></div>
+                    <button class="btn-add-cart" data-name="Chronos Watch" data-price="2199000">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Sepatu Sport">
+                </div>
+                <div class="product-info">
+                    <span class="category">Fashion</span>
+                    <h3>AeroStride Sport Shoes</h3>
+                    <div class="price-box"><span class="price" data-price="899000">Rp 899.000</span></div>
+                    <button class="btn-add-cart" data-name="AeroStride Shoes" data-price="899000">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Keranjang Belanja</h2>
+                <span class="close-btn" id="close-cart">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items-list">
+                    <p class="empty-msg">Keranjang Anda masih kosong.</p>
+                </div>
+                <div class="cart-summary">
+                    <h3>Total: <span id="cart-total-price">Rp 0</span></h3>
+                </div>
+                
+                <div class="payment-method-section">
+                    <h4>Pilih Metode Pembayaran:</h4>
+                    <div class="payment-options">
+                        <label class="pay-option">
+                            <input type="radio" name="payment" value="QRIS" checked>
+                            <span>📱 QRIS</span>
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="payment" value="DANA">
+                            <span>🔵 DANA</span>
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="payment" value="GPay">
+                            <span>🔴 GoPay</span>
+                        </label>
+                    </div>
+                </div>
+                <button id="btn-checkout" class="btn-checkout" disabled>Beli & Bayar Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="receipt-modal" class="modal hidden">
+        <div class="receipt-card">
+            <div class="receipt-header">
+                <div class="success-icon">✓</div>
+                <h2>TIKET PEMBAYARAN</h2>
+                <p>NexaStore - Pembayaran Berhasil</p>
+            </div>
+            <div class="receipt-body">
+                <div class="receipt-row"><span>No. Invoice</span><span id="receipt-inv" class="bold">INV-XXXXX</span></div>
+                <div class="receipt-row"><span>Tanggal</span><span id="receipt-date">--/--/----</span></div>
+                <div class="receipt-row"><span>Metode</span><span id="receipt-method" class="badge-pay">QRIS</span></div>
+                <hr>
+                <div id="receipt-items"></div>
+                <hr>
+                <div class="receipt-row total-row"><span>Total Bayar</span><span id="receipt-total" class="bold text-primary">Rp 0</span></div>
+            </div>
+            <div class="receipt-footer">
+                <p>Terima kasih telah berbelanja!</p>
+                <button id="close-receipt" class="btn-close-receipt">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
